@@ -289,7 +289,8 @@
   }
   .service[data-open="true"] .plus{transform:rotate(45deg); border-color:var(--accent-strong); color:var(--accent-strong);}
   .service-body{max-height:0; overflow:hidden; transition:max-height .35s ease;}
-  .service-body p{font-size:14.5px; color:var(--ink-soft); max-width:60ch; margin:0 0 24px; padding-right:56px;}
+  .service-body p{font-size:14.5px; color:var(--ink-soft); margin:0 0 24px 48px; padding-right:56px;}
+  @media (max-width:600px){ .service-body p{margin-left:0;} }
 
   /* ---------- Process ---------- */
   .process-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:0; border-top:1px solid var(--line); border-left:1px solid var(--line);}
