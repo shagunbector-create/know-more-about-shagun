@@ -81,7 +81,7 @@
     color:var(--ink); font-size:13.5px; font-weight:700;
     padding:9px 20px 9px 16px; border-radius:100px; margin-bottom:16px;
   }
-  .bubble .hl{color:var(--accent-strong); font-family:'Alex Brush', cursive; font-style:normal; font-weight:400; font-size:1.55em; line-height:1; margin:0 1px;}
+  .bubble .hl{color:var(--accent-strong); font-family:'Alex Brush', cursive; font-style:normal; font-weight:400; font-size:2.1em; line-height:1; margin:0 2px;}
   .bubble::after{
     content:""; position:absolute; left:22px; bottom:-6px; width:12px; height:12px;
     background:inherit; border-right:1px solid color-mix(in srgb, var(--accent) 30%, var(--line));
@@ -229,6 +229,11 @@
     font-family:'Newsreader',serif; font-style:italic; font-size:16px; color:var(--ink);
     margin-top:20px; padding-top:20px; border-top:1px solid var(--line); line-height:1.5;
   }
+  .id-card .strengths{margin-top:20px; padding-top:20px; border-top:1px solid var(--line);}
+  .id-card .strengths h4{font-family:'Archivo',sans-serif; font-size:11px; letter-spacing:.08em; text-transform:uppercase; font-weight:700; color:var(--ink-soft); margin-bottom:12px;}
+  .id-card .strengths .chip-row{gap:6px;}
+  .id-card .strengths .chip{font-size:11.5px; padding:5px 11px;}
+  .id-card .strengths p{font-size:12px; color:var(--ink-soft); margin-top:12px; line-height:1.45;}
   .bio p{font-size:15.5px; color:var(--ink-soft); max-width:62ch; margin:0 0 16px;}
   .bio p strong{color:var(--ink); font-weight:600;}
   .tool-block{margin-top:28px;}
@@ -431,6 +436,17 @@
         <div class="name">Shagun Bector</div>
         <div class="role">SHRM-CP · MBA Gold Medalist<br>Gurugram, India</div>
         <div class="quote">"Not just filling roles — building teams that outlast the hire."</div>
+        <div class="strengths">
+          <h4>Top 5 CliftonStrengths&reg;</h4>
+          <div class="chip-row">
+            <span class="chip">Analytical</span>
+            <span class="chip">Strategic</span>
+            <span class="chip">Achiever</span>
+            <span class="chip">Responsibility</span>
+            <span class="chip">Focus</span>
+          </div>
+          <p>Driving data-informed, goal-oriented TA strategy.</p>
+        </div>
       </div>
       <div class="bio reveal">
         <p>I'm a Talent Acquisition leader with <strong>9+ years</strong> across HR and people management, currently heading Talent Acquisition for <strong>Ozone Group</strong>. My focus sits at the intersection of leadership hiring, workforce planning, and employer branding — with a growing emphasis on where AI genuinely speeds up recruiting versus where it can't replace judgment.</p>
@@ -451,17 +467,6 @@
             <span class="chip tone-b">Darwinbox</span>
             <span class="chip tone-b">PeopleStrong</span>
             <span class="chip tone-b">ATS Platforms</span>
-          </div>
-        </div>
-        <div class="tool-block">
-          <h3>CliftonStrengths&reg;</h3>
-          <p style="font-size:14.5px; color:var(--ink-soft); margin:0 0 14px;">I lean on my top five — Analytical, Strategic, Achiever, Responsibility, and Focus — to drive data-informed, goal-oriented talent acquisition strategies.</p>
-          <div class="chip-row">
-            <span class="chip">Analytical</span>
-            <span class="chip">Strategic</span>
-            <span class="chip">Achiever</span>
-            <span class="chip">Responsibility</span>
-            <span class="chip">Focus</span>
           </div>
         </div>
       </div>
