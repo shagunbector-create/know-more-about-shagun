@@ -159,9 +159,31 @@
   }
   .nav-cta:hover{transform:translateY(-2px); box-shadow:var(--shadow);}
   .nav-links-wrap{display:flex; align-items:center; gap:30px;}
+
+  .nav-toggle{
+    display:none; flex-direction:column; justify-content:center; align-items:center; gap:5px;
+    width:40px; height:40px; border-radius:10px; border:1px solid var(--line); background:var(--paper-2);
+    flex:none; cursor:pointer; padding:0; -webkit-tap-highlight-color:transparent;
+  }
+  .nav-toggle span{width:18px; height:2px; background:var(--ink); border-radius:2px; transition:transform .25s ease, opacity .25s ease;}
+  .nav-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-toggle.active span:nth-child(2){opacity:0;}
+  .nav-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
   @media (max-width:760px){
-    nav.links{display:none;}
     .nav-row{height:64px;}
+    .nav-toggle{display:flex;}
+    .nav-links-wrap{gap:12px;}
+    nav.links{
+      display:flex; flex-direction:column; gap:0;
+      position:absolute; left:0; right:0; top:64px; z-index:59;
+      background:var(--paper); border-bottom:1px solid var(--line);
+      max-height:0; overflow:hidden; opacity:0; padding:0 22px;
+      transition:max-height .3s ease, opacity .25s ease, padding .3s ease;
+    }
+    nav.links.open{max-height:400px; opacity:1; padding:10px 22px 18px;}
+    nav.links a{padding:13px 0; border-bottom:1px solid var(--line); font-size:15px;}
+    nav.links a:last-child{border-bottom:none;}
   }
 
   /* ---------- Hero ---------- */
@@ -359,6 +381,9 @@
         <a href="resume/">Full Résumé ↗</a>
       </nav>
       <a class="nav-cta" href="#contact">Get in touch</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navList">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 </header>
@@ -678,6 +703,24 @@
   }
   document.addEventListener('scroll', updateActiveNav, {passive:true});
   updateActiveNav();
+
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navList = document.getElementById('navList');
+  if (navToggle && navList){
+    navToggle.addEventListener('click', () => {
+      const isOpen = navList.classList.toggle('open');
+      navToggle.classList.toggle('active', isOpen);
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    navList.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navList.classList.remove('open');
+        navToggle.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
 
   // Services accordion
   document.querySelectorAll('.service-head').forEach(btn => {
