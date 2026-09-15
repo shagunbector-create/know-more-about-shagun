@@ -102,7 +102,7 @@
   .marquee-band::before{left:0; background:linear-gradient(90deg, var(--paper-2), transparent);}
   .marquee-band::after{right:0; background:linear-gradient(270deg, var(--paper-2), transparent);}
   .marquee-track{display:flex; gap:14px; width:max-content; animation:marquee-scroll 32s linear infinite;}
-  .marquee-band:hover .marquee-track{animation-play-state:paused;}
+  @media (hover: hover){ .marquee-band:hover .marquee-track{animation-play-state:paused;} }
   @keyframes marquee-scroll{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
   .marquee-track .mchip{
     display:inline-flex; align-items:center; gap:10px; white-space:nowrap;
